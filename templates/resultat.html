@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Forside{% endblock %}
+
+{%block content%}
+{% if navn.lower() == "pedo persen" %}
+    <h1>Velkommen til min side, Henry Persen som ikke er pedofil</h1>
+{% else %}
+    <h1>Velkommen til min side, {{ navn }}</h1>
+{% endif %}
+<p>E-posten din er {{ epost }}</p>
+<p>Alderen din er {{ alder }}</p>
+<p>Kommentaren din er: "{{ kommentar }}"</p>
+<p>Kurset du har valgt er: {{ kurs }}</p>
+<p><a href="{{ url_for('form') }}">Tilbake til form</a></p>
+<img src="{{ url_for('static', filename='images/Flask.png') }}"
+    alt="Flask-logo">
+
+{% endblock %}
